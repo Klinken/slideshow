@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+}
+
+/* THE SLIDER LAYOUT */
+
+
+
+
+/* THE SLIDES */
+.slides img:nth-child(n){
+    display: none;
+}
+
+
+#visible {
+    display: block;
+}
