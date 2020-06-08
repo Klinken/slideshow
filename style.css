@@ -4,15 +4,45 @@ body {
 
 /* THE SLIDER LAYOUT */
 
-
-
-
-/* THE SLIDES */
-.slides img:nth-child(n){
-    display: none;
+.slider-grid {
+    display: grid;
+    margin: 0 auto;
+    width: 900px;
+    grid: 1fr 25% / 100px 1fr 100px;
 }
 
 
-#visible {
-    display: block;
+/* THE SLIDES */
+
+.slides {
+    grid-area: 1 / 1 / end / end;
+}
+
+.slides:hover {
+    cursor: pointer;
+}
+
+.slides img:nth-child(n){
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* THE BUTTONS */
+
+.slider-grid #button-backward,
+.slider-grid #button-forward {
+    background-color: initial;
+    border: none;
+    color: #FFF;
+}
+
+.slider-grid #button-backward{
+    grid-area: 2 / 1 / end / 1;
+}
+
+.slider-grid #button-forward{
+    grid-area: 2 / 3 / 3 / end;
 }
