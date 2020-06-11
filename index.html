@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="/slider.js" async></script>
     <title>Slider</title>
@@ -13,16 +14,20 @@
 
 <div class="slider-grid">
     
-
+    <div class="slide-text" id="slide-text"></div>
     <!-- TODO: Create overlay of play/pause -->
     <div class="slides" id="slides">
-        <img src="https://picsum.photos/id/1025/600/400" alt="">
-        <img src="https://picsum.photos/id/550/600/400" alt="">
-        <img src="https://picsum.photos/id/1020/600/400" alt="">
+        <img src="https://picsum.photos/id/1025/600/400" alt="Pug in the wood">
+        <img src="https://picsum.photos/id/550/600/400" alt="Woman looking to the city">
+        <img src="https://picsum.photos/id/1020/600/400" alt="Bear with pups">
     </div>
 
-    <button id="button-backward">Backward</button>
-    <button id="button-forward">Forward</button>
+    <button id="button-backward">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m24 21c-2.7-11.9-16-14-16-14v-4l-8 8 8 8v-4s10.2-0.2 16 6z"/></svg>
+    </button>
+    <button id="button-forward">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 15v4l8-8.035-8-7.965v4s-13.277 2.144-16 14c5.796-6.206 16-6 16-6z"/></svg>
+    </button>
 
 </div>
 
@@ -40,8 +45,8 @@ User Stories
 
 Bonus features
 
-    [] Add animation to the slides
-    [] Add text over the slides
+    [X] Add animation to the slides
+    [X] Add text over the slides
     [] Create a 3D effect
 
 

@@ -1,9 +1,9 @@
 
-
 //This keeps track of the position, when changing slides in the slider, starts at first image
 var currentPosition = 0;
 
-var timeBetweenSlides = 1000; //This is set in milliseconds
+var timeBetweenSlides = 3000; //This is set in milliseconds
+var animationTime = 1;
 
 var automaticSliderOn = true;
 
@@ -19,7 +19,7 @@ for(var i = 0; i < images.length; i++){
 }
 
 //This makes the first image visible
-images[currentPosition].style.display = "block";
+styleSlide(currentPosition);
 
 //This function changes the current position by 1, if given the word "add", it goes forward, else it goes backwards
 function changePosition(addOrSubstract){
@@ -30,16 +30,24 @@ function changePosition(addOrSubstract){
 
     if(currentPosition >= images.length){
         currentPosition = 0;
-        images[currentPosition].style.display = "block";
+        styleSlide(currentPosition);
 
     } else if(currentPosition < 0){
         currentPosition = images.length - 1;
-        images[currentPosition].style.display = "block";
+        styleSlide(currentPosition);
 
     } else {
-        images[currentPosition].style.display = "block";
+        styleSlide(currentPosition);
 
     }
+}
+
+//Helper function, used for styling the current slide
+function styleSlide(currentPosition){
+    images[currentPosition].style.display = "block";
+    images[currentPosition].style.animation = "slideanimation 1s";
+    document.getElementById("slide-text").innerHTML = "<p>" + images[currentPosition].alt + "</p>";
+
 }
 
 //The following automatically changes the images after a given time

@@ -1,14 +1,31 @@
 body {
     margin: 0;
+    font-family: 'Galada', cursive;
 }
 
 /* THE SLIDER LAYOUT */
 
 .slider-grid {
     display: grid;
-    margin: 0 auto;
     width: 900px;
-    grid: 1fr 25% / 100px 1fr 100px;
+    margin: 0 auto;
+    grid: 75px 1fr 100px / 100px 1fr 100px;
+
+}
+
+/* THE SLIDE-TEXT */
+
+.slide-text {
+    grid-area: 1 / 1 / 2 / end;
+    z-index: 100;
+}
+.slide-text p {
+    background-color: rgba(255, 255, 255, 0.432);
+    border-bottom-right-radius: 10px;
+    width: max-content;
+    margin: 0;
+    padding: 20px 30px 20px 20px;
+    font-size: 1.5rem;
 }
 
 
@@ -18,14 +35,17 @@ body {
     grid-area: 1 / 1 / end / end;
 }
 
-.slides:hover {
-    cursor: pointer;
-}
-
 .slides img:nth-child(n){
     display: none;
     width: 100%;
     height: auto;
+}
+
+/* SLIDE ANIMATION */
+
+@keyframes slideanimation {
+    0% {opacity: 0.1;}
+    100% {opacity: 1;}
 }
 
 
@@ -37,12 +57,28 @@ body {
     background-color: initial;
     border: none;
     color: #FFF;
+    z-index: 100;
+    cursor: pointer;
+}
+.slider-grid #button-backward svg,
+.slider-grid #button-forward svg {
+    width: 20px;
+    padding: 10px;
+    background-color: rgba(220, 220, 220, 0.5);
+    border-radius: 10px;
+}
+.slider-grid #button-backward svg:hover,
+.slider-grid #button-forward svg:hover {
+    width: 20px;
+    padding: 10px;
+    background-color: gainsboro;
+    border-radius: 10px;
 }
 
 .slider-grid #button-backward{
-    grid-area: 2 / 1 / end / 1;
+    grid-area: 3 / 1 / end / 1;
 }
 
 .slider-grid #button-forward{
-    grid-area: 2 / 3 / 3 / end;
+    grid-area: 3 / 3 / 3 / end;
 }
