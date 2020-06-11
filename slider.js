@@ -1,7 +1,7 @@
 //This keeps track of the position, when changing slides in the slider, starts at first image
 var currentPosition = 0;
 
-var timeBetweenSlides = 5000; //This is set in milliseconds
+var timeBetweenSlides = 7000; //This is set in milliseconds
 var animationTime = 1; //This is set in seconds
 
 var automaticSliderOn = true;
