@@ -1,10 +1,14 @@
-//This keeps track of the position, when changing slides in the slider, starts at first image
+//This keeps track of the position, when changing slides in the slider, starts at the first image
 var currentPosition = 0;
 
 var timeBetweenSlides = 7000; //This is set in milliseconds
-var animationTime = 1; //This is set in seconds
+var animationLength = 1; //This is set in seconds
 
 var automaticSliderOn = true;
+
+//On load, set buttons svg
+document.getElementById("button-backward").innerHTML = "<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='m24 21c-2.7-11.9-16-14-16-14v-4l-8 8 8 8v-4s10.2-0.2 16 6z'/></svg>";
+document.getElementById("button-forward").innerHTML = "<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M16 15v4l8-8.035-8-7.965v4s-13.277 2.144-16 14c5.796-6.206 16-6 16-6z'/></svg>";
 
 //This counts the amount of images in the slider
 var images = document.getElementById("slides").children;
@@ -41,11 +45,13 @@ function changePosition(addOrSubstract) {
 
 //Helper function, used for styling the current slide
 function styleSlide(position) {
-    images[position].style.display = "block";
-    images[position].style.animation = "slideanimation " + animationTime + "s";
+    var imageStyle = images[position].style;
+    imageStyle.display = "block";
+    imageStyle.animation = "slideanimation " + animationLength + "s";
 
     document.getElementById("slide-text").innerHTML = "<p>" + images[position].alt + "</p>";
 
+//This part makes sure, that the first image gets its title set
     if (automaticSliderOn) {
         images[currentPosition].title = "Click to stop the slideshow";
     }
